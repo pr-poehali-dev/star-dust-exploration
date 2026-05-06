@@ -10,10 +10,16 @@ export function Footer() {
             <h2 className="font-orbitron text-2xl font-bold text-white mb-4">
               Lunar<span className="text-red-500">Land</span>
             </h2>
-            <p className="font-space-mono text-gray-300 mb-6 max-w-md">
+            <p className="font-space-mono text-gray-300 mb-4 max-w-md">
               Продаём лунные участки с официальными документами и уникальными координатами с 2020 года.
               Более 10 000 довольных владельцев.
             </p>
+            <a
+              href="tel:+79212054248"
+              className="font-orbitron text-xl font-bold text-red-400 hover:text-red-300 transition-colors duration-200 mb-6 inline-block"
+            >
+              +7 921 205-42-48
+            </a>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-red-500 transition-colors duration-200">
                 <Twitter size={20} />
