@@ -138,16 +138,29 @@ export const Hero3DWebGL = () => {
 
   return (
     <div className="h-screen bg-black relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none z-10">
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
-        <div className="absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-black to-transparent" />
-        <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-black to-transparent" />
+
+      {/* Moon background image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://cdn.poehali.dev/projects/e9522643-3f58-4924-ac04-6a6808d7276a/files/8ce4e318-bbad-4ba6-8236-e750d06e02eb.jpg"
+          alt="Moon"
+          className="w-full h-full object-cover opacity-60"
+        />
       </div>
 
-      <div className="h-screen uppercase items-center w-full absolute z-[60] pointer-events-none px-10 flex justify-center flex-col">
-        <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron">
-          <div className="flex space-x-2 lg:space-x-6 overflow-hidden text-white">
+      {/* Gradient overlays */}
+      <div className="absolute inset-0 pointer-events-none z-10">
+        <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-56 bg-gradient-to-t from-black to-transparent" />
+        <div className="absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-black to-transparent" />
+        <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-black to-transparent" />
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
+
+      {/* Text content */}
+      <div className="h-screen items-center w-full absolute z-[60] pointer-events-none px-10 flex justify-center flex-col gap-4">
+        <div className="uppercase text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron">
+          <div className="flex space-x-2 lg:space-x-6 overflow-hidden text-white drop-shadow-2xl">
             {titleWords.map((word, index) => (
               <div
                 key={index}
@@ -162,7 +175,8 @@ export const Hero3DWebGL = () => {
             ))}
           </div>
         </div>
-        <div className="text-xs md:text-xl xl:text-2xl 2xl:text-3xl mt-2 overflow-hidden text-white font-bold max-w-4xl mx-auto text-center px-4">
+
+        <div className="text-xs md:text-xl xl:text-2xl 2xl:text-3xl overflow-hidden text-white font-bold max-w-3xl mx-auto text-center px-4">
           <div
             className={subtitleVisible ? "fade-in-subtitle" : ""}
             style={{
@@ -173,20 +187,50 @@ export const Hero3DWebGL = () => {
             {subtitle}
           </div>
         </div>
-      </div>
 
-      <Canvas
-        flat
-        gl={{
-          antialias: true,
-          alpha: false,
-          powerPreference: "high-performance",
-        }}
-        camera={{ position: [0, 0, 1] }}
-        style={{ background: "#000000" }}
-      >
-        <Scene />
-      </Canvas>
+        {subtitleVisible && (
+          <div
+            className="fade-in-subtitle flex flex-col sm:flex-row gap-4 mt-4 pointer-events-auto"
+            style={{ animationDelay: `${titleWords.length * 0.13 + 0.7 + subtitleDelay}s` }}
+          >
+            <a
+              href="#pricing"
+              className="bg-red-500 hover:bg-red-600 text-white font-orbitron font-bold px-8 py-3 rounded-md text-base uppercase tracking-widest transition-colors duration-200 text-center"
+            >
+              Купить участок
+            </a>
+            <a
+              href="#applications"
+              className="border border-white/40 hover:border-white text-white font-orbitron px-8 py-3 rounded-md text-base uppercase tracking-widest transition-colors duration-200 text-center backdrop-blur-sm"
+            >
+              Как это работает
+            </a>
+          </div>
+        )}
+
+        {/* Stats */}
+        {subtitleVisible && (
+          <div
+            className="fade-in-subtitle flex gap-10 mt-6 text-center pointer-events-none"
+            style={{ animationDelay: `${titleWords.length * 0.13 + 1.1 + subtitleDelay}s` }}
+          >
+            <div>
+              <div className="text-2xl md:text-3xl font-bold text-red-400 font-orbitron">10 000+</div>
+              <div className="text-gray-400 text-xs md:text-sm font-space-mono mt-1">довольных владельцев</div>
+            </div>
+            <div className="w-px bg-red-500/30" />
+            <div>
+              <div className="text-2xl md:text-3xl font-bold text-red-400 font-orbitron">24 ч</div>
+              <div className="text-gray-400 text-xs md:text-sm font-space-mono mt-1">до получения документа</div>
+            </div>
+            <div className="w-px bg-red-500/30" />
+            <div>
+              <div className="text-2xl md:text-3xl font-bold text-red-400 font-orbitron">от 1 490 ₽</div>
+              <div className="text-gray-400 text-xs md:text-sm font-space-mono mt-1">за 1 акр</div>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   )
 }
