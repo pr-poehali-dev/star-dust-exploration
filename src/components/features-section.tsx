@@ -3,40 +3,40 @@ import { Badge } from "@/components/ui/badge"
 
 const features = [
   {
-    title: "Адаптивная нейрообработка",
-    description: "Самооптимизирующиеся алгоритмы, которые обучаются на нейронных паттернах и улучшают интерпретацию сигналов.",
-    icon: "brain",
-    badge: "ИИ",
+    title: "Официальный документ",
+    description: "Свидетельство о праве собственности на лунный участок с уникальными координатами, печатью и подписью. Оформлено на основании Договора о космосе 1967 года.",
+    icon: "scroll",
+    badge: "Легально",
   },
   {
-    title: "Медицинская защита",
-    description: "Шифрование по стандартам FDA со сквозной защитой конфиденциальных нейронных данных.",
-    icon: "lock",
-    badge: "Сертификат",
+    title: "Точные координаты",
+    description: "Каждый участок имеет уникальные GPS-координаты на лунной поверхности. Ваша территория нанесена на карту и зарегистрирована в международном реестре.",
+    icon: "map",
+    badge: "Карта",
   },
   {
-    title: "Интуитивное управление",
-    description: "Естественная трансляция мыслей в действия с откликом менее миллисекунды и точностью 99,7%.",
-    icon: "globe",
-    badge: "Точность",
+    title: "Вечная собственность",
+    description: "Право на ваш участок передаётся по наследству. Вы можете подарить, продать или завещать лунную землю — как любое другое имущество.",
+    icon: "infinity",
+    badge: "Навсегда",
   },
   {
-    title: "Предиктивная калибровка",
-    description: "ML-модели, которые предугадывают намерения пользователя и оптимизируют нейронные пути.",
+    title: "Быстрое оформление",
+    description: "Сертификат готов в течение 24 часов. Доставка по всей России и СНГ. Подходит как оригинальный подарок на любой праздник.",
     icon: "zap",
-    badge: "Умный",
+    badge: "24 часа",
   },
   {
-    title: "Биометрическая интеграция",
-    description: "Бесшовная синхронизация с мониторингом жизненных показателей для контроля здоровья.",
-    icon: "link",
-    badge: "Связь",
+    title: "Подарочный формат",
+    description: "Красивая упаковка, именной сертификат и история вашего участка. Идеально для дня рождения, годовщины или корпоративного подарка.",
+    icon: "gift",
+    badge: "Подарок",
   },
   {
-    title: "Поддержка XR",
-    description: "Нативная совместимость с AR/VR-средами для терапевтических и рабочих приложений.",
-    icon: "target",
-    badge: "XR Ready",
+    title: "Поддержка 24/7",
+    description: "Наши специалисты помогут с выбором участка, оформлением и доставкой. Отвечаем на вопросы в любое время суток.",
+    icon: "headphones",
+    badge: "Поддержка",
   },
 ]
 
@@ -45,9 +45,9 @@ export function FeaturesSection() {
     <section className="py-24 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4 font-sans">Возможности нового поколения</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-4 font-sans">Почему выбирают нас</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Почувствуйте будущее с технологиями, которые переопределяют возможное
+            Ваш лунный участок — это реальный документ, уникальные координаты и вечная история
           </p>
         </div>
 
@@ -61,12 +61,12 @@ export function FeaturesSection() {
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-3xl">
-                    {feature.icon === "brain" && "&#129504;"}
-                    {feature.icon === "lock" && "&#128274;"}
-                    {feature.icon === "globe" && "&#127760;"}
-                    {feature.icon === "zap" && "&#9889;"}
-                    {feature.icon === "link" && "&#128279;"}
-                    {feature.icon === "target" && "&#127919;"}
+                    {feature.icon === "scroll" && "📜"}
+                    {feature.icon === "map" && "🗺️"}
+                    {feature.icon === "infinity" && "♾️"}
+                    {feature.icon === "zap" && "⚡"}
+                    {feature.icon === "gift" && "🎁"}
+                    {feature.icon === "headphones" && "🎧"}
                   </span>
                   <Badge variant="secondary" className="bg-accent text-accent-foreground">
                     {feature.badge}

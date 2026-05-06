@@ -12,7 +12,7 @@ export function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <h1 className="font-orbitron text-xl font-bold text-white">
-              Synapse<span className="text-red-500">AI</span>
+              Lunar<span className="text-red-500">Land</span>
             </h1>
           </div>
 
@@ -20,23 +20,23 @@ export function Navbar() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               <a
-                href="#technology"
+                href="#applications"
                 className="font-geist text-white hover:text-red-500 transition-colors duration-200"
               >
-                Технологии
-              </a>
-              <a href="#safety" className="font-geist text-white hover:text-red-500 transition-colors duration-200">
-                Безопасность
+                Как купить
               </a>
               <a href="#faq" className="font-geist text-white hover:text-red-500 transition-colors duration-200">
                 Вопросы
+              </a>
+              <a href="#testimonials" className="font-geist text-white hover:text-red-500 transition-colors duration-200">
+                Отзывы
               </a>
             </div>
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-red-500 hover:bg-red-600 text-white font-geist border-0">В лист ожидания</Button>
+            <Button className="bg-red-500 hover:bg-red-600 text-white font-geist border-0">Купить участок</Button>
           </div>
 
           {/* Mobile menu button */}
@@ -55,18 +55,11 @@ export function Navbar() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-black/98 border-t border-red-500/20">
               <a
-                href="#technology"
+                href="#applications"
                 className="block px-3 py-2 font-geist text-white hover:text-red-500 transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
-                Технологии
-              </a>
-              <a
-                href="#safety"
-                className="block px-3 py-2 font-geist text-white hover:text-red-500 transition-colors duration-200"
-                onClick={() => setIsOpen(false)}
-              >
-                Безопасность
+                Как купить
               </a>
               <a
                 href="#faq"
@@ -75,9 +68,16 @@ export function Navbar() {
               >
                 Вопросы
               </a>
+              <a
+                href="#testimonials"
+                className="block px-3 py-2 font-geist text-white hover:text-red-500 transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                Отзывы
+              </a>
               <div className="px-3 py-2">
                 <Button className="w-full bg-red-500 hover:bg-red-600 text-white font-geist border-0">
-                  В лист ожидания
+                  Купить участок
                 </Button>
               </div>
             </div>
